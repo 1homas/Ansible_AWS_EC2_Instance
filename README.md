@@ -10,13 +10,13 @@ Deploy an AWS EC2 instance of a Linux VM (Ubuntu by default or another of your c
 
 1. Create your Python environment and install Ansible. If you have any problems installing Python or Ansible, see [Installing Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
-```bash
-pip install --upgrade pip
-pip install pipenv
-pipenv install --python 3.9
-pipenv install ansible boto boto3 botocore
-pipenv shell
-```
+    ```bash
+    pip install --upgrade pip
+    pip install pipenv
+    pipenv install --python 3.9
+    pipenv install ansible boto boto3 botocore
+    pipenv shell
+    ```
 
 2. Export your AWS Access & Secret keys into your terminal environment:
 

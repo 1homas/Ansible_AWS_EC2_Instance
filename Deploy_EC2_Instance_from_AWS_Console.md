@@ -29,11 +29,11 @@ Your example AWS instance(s) will have a public IP address so anyone can - and w
 6. When prompted, save the `aws_ssh_key.pem` private key file to your home directory in a folder named `.ssh` (`~/.ssh/aws_ssh_key.pem`)
 7. If you are using macOS, Linux, or WSL, change the file permissions so it cannot be viewed by others or accidentally overwritten or deleted by you:
 
-```bash
-chmod 400 ~/.ssh/aws_ssh_key.pem
-```
+    ```bash
+    chmod 400 ~/.ssh/aws_ssh_key.pem
+    ```
 
-  > 🛑 Do not lose this private key file! You will not be able to login to your AWS EC2 instances configured with the corresponding public key!
+    > 🛑 Do not lose this private key file! You will not be able to login to your AWS EC2 instances configured with the corresponding public key!
 
 When you create instances in AWS, you may choose to put the matching public key into your VMs to authorize your SSH login. To use your key with AWS EC2 instances, you will connect using SSH and authenticate with the `-i` *identity file* option which is your `aws_ssh_key.pem` private key :
 
@@ -59,7 +59,7 @@ You may quickly deploy a Linux VM with these easy steps.
 8. Click on **Launch**
 9.  Choose or create your SSH key pair, acknowledge that you have the private key file, then click **Launch Instances**
 
-  > 🛑 Do not proceed without a key pair and do not choose a public key without a matching private key file in your possession!
+    > 🛑 Do not proceed without a key pair and do not choose a public key without a matching private key file in your possession!
 
 
 
@@ -70,10 +70,11 @@ You may quickly deploy a Linux VM with these easy steps.
 1. Click on the **View Instances** button then click on your **Instance ID**. You may click on the **⟳** refresh button until you see the Instance State is **Running**.
 2. Click **Connect** to see the `ssh` command for your instance:
 
-```bash
-ssh -i "~/.ssh/aws_ssh_key.pem" ubuntu@{hostname | IP}
-```
-  > ⚠ Note: you may need to fix the path to your private key (`*.pem`) file if it is not in the current directory
+    ```bash
+    ssh -i "~/.ssh/aws_ssh_key.pem" ubuntu@{hostname | IP}
+    ```
+
+    > ⚠ Note: you may need to fix the path to your private key (`*.pem`) file if it is not in the current directory
 
 You may also use the public IP address to connect :
 

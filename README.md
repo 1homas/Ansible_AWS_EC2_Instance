@@ -1,4 +1,4 @@
-# AWS EC2 Playbook
+# Ansible AWS EC2 Instance Playbook
 
 Deploy an AWS EC2 instance of a Linux VM (Ubuntu by default or another of your choice).  You may complete everything below within the [AWS Free Tier](https://aws.amazon.com/free).
 
@@ -8,7 +8,7 @@ Deploy an AWS EC2 instance of a Linux VM (Ubuntu by default or another of your c
 
 ## Quick Start
 
-1. Create your Python environment and install Ansible. If you have any problems installing Python or Ansible, see [Installing Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+1. Create your Python environment and install Ansible. 
 
     ```bash
     pip install --upgrade pip
@@ -17,6 +17,8 @@ Deploy an AWS EC2 instance of a Linux VM (Ubuntu by default or another of your c
     pipenv install ansible boto boto3 botocore
     pipenv shell
     ```
+
+    If you have any problems installing Python or Ansible, see [Installing Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
 2. Export your AWS Access & Secret keys into your terminal environment:
 

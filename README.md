@@ -20,30 +20,30 @@ pipenv shell
 
 2. Export your AWS Access & Secret keys into your terminal environment:
 
-```bash
-export AWS_REGION='us-west-1'
-export AWS_ACCESS_KEY='AKIAIOSF/EXAMPLE+KEY'
-export AWS_SECRET_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfi/EXAMPLE+KEY'
-```
+    ```bash
+    export AWS_REGION='us-west-1'
+    export AWS_ACCESS_KEY='AKIAIOSF/EXAMPLE+KEY'
+    export AWS_SECRET_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfi/EXAMPLE+KEY'
+    ```
 
 3. Run the Ansible playbook:
 
-```bash
-ansible-playbook playbook.yaml
-```
+    ```bash
+    ansible-playbook playbook.yaml
+    ```
 
 4. SSH to your new running instance
   > ⚠ Replace the `{hostname}` with the dynamically assigned public IP address!
 
-```bash
-ssh -i ./AWS_EC2_Instance_Test.private_key.pem ec2-user@{hostname}
-```
+    ```bash
+    ssh -i ./AWS_EC2_Instance_Test.private_key.pem ec2-user@{hostname}
+    ```
 
 5. When you're done, you may terminate and remove the instances:
 
-```bash
-ansible-playbook terminate.yaml
-```
+    ```bash
+    ansible-playbook terminate.yaml
+    ```
 
 
 
@@ -65,15 +65,15 @@ In order to programmatically interact with resources in your AWS account - using
     1. Review your settings then click **Create User**
 2. Copy your **Access Key ID**, and **Secret Access Key** into dot-file named with the **IAM API Username** in your home directory (`~/.aws-api.keys`) :
 
-```bash
-export AWS_REGION='us-west-1'
-export AWS_ACCESS_KEY='AKIAIOSF/EXAMPLE+KEY'
-export AWS_SECRET_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfi/EXAMPLE+KEY'
-```
+    ```bash
+    export AWS_REGION='us-west-1'
+    export AWS_ACCESS_KEY='AKIAIOSF/EXAMPLE+KEY'
+    export AWS_SECRET_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfi/EXAMPLE+KEY'
+    ```
 
-  > 🛑 These credentials allow *anyone* to provision unlimited AWS resources and have them conveniently billed to your account - be careful about where you store them!
+    > 🛑 These credentials allow *anyone* to provision unlimited AWS resources and have them conveniently billed to your account - be careful about where you store them!
 
-  > 💡 You may want to encrypt your keys file with Ansible Vault
+    > 💡 You may want to encrypt your keys file with Ansible Vault
 
 3. Once you have saved your credentials, click **Close**
 
@@ -87,7 +87,7 @@ Every Ansible AWS task requires [authentication for programmatic access](https:/
 
 To keep your AWS credentials safe - and keep your playbooks shorter and simpler! - the [Ansible AWS Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_aws.html) explains how you may use shell environment variables to do the same thing.  
 
-In your terminal session with Ansible, load the AWS_* environment variables from the `~/.aws-api.keys` you created with the command
+In your terminal session with Ansible, load the `AWS_*` environment variables from the `~/.aws-api.keys` you created with the command
 ```bash
 source ~/.aws-api.keys
 ```
@@ -117,7 +117,7 @@ If you would rather explicitly include the `region` and `aws_*` keys, you may pu
 - [amazon.aws](https://docs.ansible.com/ansible/latest/collections/amazon/aws/) Ansible collection documentation
 - [community.aws](https://docs.ansible.com/ansible/latest/collections/community/aws/) Ansible collection documentation
 - - [AWS re:Invent 2019: AWS Networking Fundamentals (NET201-R2)](https://www.youtube.com/watch?v=gj4CD73Wmns) provides an excellent overview of the networking elements that are automatically created when using the [Launch Instance wizard](https://console.aws.amazon.com/ec2/home#LaunchInstanceWizard)
-- [Best practices for managing AWS access keys]([Best practices for managing AWS access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html)
+- [Best practices for managing AWS access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html)
 
 
 

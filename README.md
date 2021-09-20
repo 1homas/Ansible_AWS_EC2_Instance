@@ -5,7 +5,13 @@ Deploy an AWS EC2 instance of a Linux VM.  You may complete everything below wit
 
 ## Quick Start
 
-1. Create your Python environment and install Ansible. 
+1. Clone this repository:  
+
+    ```bash
+    git clone https://github.com/1homas/Ansible_AWS_EC2_Instance
+    ```
+
+1. Create your Python environment and install Ansible:  
 
     ```bash
     pip install --upgrade pip
@@ -17,7 +23,7 @@ Deploy an AWS EC2 instance of a Linux VM.  You may complete everything below wit
 
     If you have any problems installing Python or Ansible, see [Installing Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
-2. Export your AWS Access & Secret keys into your terminal environment:
+1. Export your AWS Access & Secret keys into your terminal environment:  
 
     ```bash
     export AWS_REGION='us-west-1'
@@ -25,13 +31,13 @@ Deploy an AWS EC2 instance of a Linux VM.  You may complete everything below wit
     export AWS_SECRET_KEY='wJalrXUtnFEMI/K7MDENG/bPxRfi/EXAMPLE+KEY'
     ```
 
-3. Run the Ansible playbook:
+1. Run the Ansible playbook:  
 
     ```bash
     ansible-playbook playbook.yaml
     ```
 
-4. SSH to your new running instance
+1. SSH to your new running instance:  
 
     > ⚠ Replace the `{hostname}` with the dynamically assigned public IP address!
 
@@ -39,7 +45,7 @@ Deploy an AWS EC2 instance of a Linux VM.  You may complete everything below wit
     ssh -i ./AWS_EC2_Instance_Test.private_key.pem ec2-user@{hostname}
     ```
 
-5. When you're done, you may terminate and remove the instances:
+1. When you're done, you may terminate and remove the instances:
 
     ```bash
     ansible-playbook terminate.yaml

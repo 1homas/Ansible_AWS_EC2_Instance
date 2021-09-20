@@ -1,9 +1,6 @@
 # Ansible AWS EC2 Instance Playbook
 
-Deploy an AWS EC2 instance of a Linux VM (Ubuntu by default or another of your choice).  You may complete everything below within the [AWS Free Tier](https://aws.amazon.com/free).
-
-
-
+Deploy an AWS EC2 instance of a Linux VM.  You may complete everything below within the [AWS Free Tier](https://aws.amazon.com/free).  If you have never deployed an AWS EC2 instance, you should first read [Deploy an EC2 Instance from the AWS Console](Deploy_EC2_Instance_from_AWS_Console.md) to understand the process and the virtual private cloud (VPC) components involved.
 
 
 ## Quick Start

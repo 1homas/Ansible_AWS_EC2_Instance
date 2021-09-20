@@ -33,7 +33,8 @@ pipenv shell
     ```
 
 4. SSH to your new running instance
-  > ⚠ Replace the `{hostname}` with the dynamically assigned public IP address!
+
+    > ⚠ Replace the `{hostname}` with the dynamically assigned public IP address!
 
     ```bash
     ssh -i ./AWS_EC2_Instance_Test.private_key.pem ec2-user@{hostname}
@@ -63,7 +64,7 @@ In order to programmatically interact with resources in your AWS account - using
     1. Create a new group named **APIs** or something similar if you don't have one already then click **Next: Tags**
     1. You may add tags as key-value pairs or skip it and click **Next: Review**
     1. Review your settings then click **Create User**
-2. Copy your **Access Key ID**, and **Secret Access Key** into dot-file named with the **IAM API Username** in your home directory (`~/.aws-api.keys`) :
+2. Copy your **Access Key ID**, and **Secret Access Key** into dot-file named with the **IAM API Username** in your home directory (`~/.keys/aws-api.keys`) :
 
     ```bash
     export AWS_REGION='us-west-1'
@@ -87,9 +88,9 @@ Every Ansible AWS task requires [authentication for programmatic access](https:/
 
 To keep your AWS credentials safe - and keep your playbooks shorter and simpler! - the [Ansible AWS Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_aws.html) explains how you may use shell environment variables to do the same thing.  
 
-In your terminal session with Ansible, load the `AWS_*` environment variables from the `~/.aws-api.keys` you created with the command
+In your terminal session with Ansible, load the `AWS_*` environment variables from the `~/.keys/aws-api.keys` you created with the command
 ```bash
-source ~/.aws-api.keys
+source ~/.keys/aws-api.keys
 ```
 
 The `amazon.aws.*` and `community.aws.*` modules will implicitly use the environment variables for programmatic access, eliminating 2-3 lines from *every* AWS-related task in your playbooks!  This is the method used in this repository's playbooks.  

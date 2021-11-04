@@ -1,7 +1,19 @@
 ---
 #
+# Terminate AWS EC2 Instances for a Project
+#   - Terminate all EC2 instances in Project
+#   - Delete Subnets
+#   - Delete Route Table
+#   - Delete Internet Gateway
+#   - Delete Security Groups in VPC
+#   - Delete VPCs
+#   - Delete public_key
+#   - Delete private_key.pem
+#
 # Run: `ansible-playbook terminate.yaml`
 #
+
+
 - name: Terminate AWS EC2 Instances for Project "{{ project_name }}"
   hosts: localhost
   vars_prompt:
